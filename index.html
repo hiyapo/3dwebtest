@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AETHERIA — Anime Universe Reimagined</title>
+  <meta name="description" content="Step into AETHERIA — where anime meets cutting-edge 3D technology. Explore breathtaking worlds, iconic characters, and immersive storytelling like never before." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@200;300;400;500;600;700;800;900&family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Canvas for Three.js -->
+  <canvas id="three-canvas"></canvas>
+
+  <!-- Navbar -->
+  <nav id="navbar" class="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <span class="logo-jp">アエ</span>
+        <span class="logo-en">AETHERIA</span>
+      </a>
+      <div class="nav-links">
+        <a href="#universe" class="nav-link">Universe</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#showcase" class="nav-link">Showcase</a>
+        <a href="#join" class="nav-link nav-link-cta">Enter the Portal</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Scroll Progress -->
+  <div class="scroll-progress">
+    <div class="scroll-progress-bar" id="scrollBar"></div>
+  </div>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section id="hero" class="section hero-section">
+    <div class="hero-content">
+      <div class="hero-eyebrow" data-animate="fade-up">
+        <span class="eyebrow-line"></span>
+        <span class="eyebrow-text">アニメの新時代</span>
+        <span class="eyebrow-line"></span>
+      </div>
+      <h1 class="hero-title" data-animate="fade-up">
+        <span class="title-line">Welcome to</span>
+        <span class="title-line title-accent">AETHERIA</span>
+      </h1>
+      <p class="hero-subtitle" data-animate="fade-up">
+        Where anime transcends reality. Experience breathtaking 3D worlds,
+        iconic characters, and stories that rewrite the rules of imagination.
+      </p>
+      <div class="hero-cta" data-animate="fade-up">
+        <button class="btn btn-primary" id="heroBtn">
+          <span>Explore Now</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </button>
+        <button class="btn btn-ghost" id="trailerBtn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="5 3 19 12 5 21 5 3"/>
+          </svg>
+          <span>Watch Trailer</span>
+        </button>
+      </div>
+      <div class="hero-scroll-hint" data-animate="fade-up">
+        <div class="scroll-mouse">
+          <div class="scroll-dot"></div>
+        </div>
+        <span>Scroll to discover</span>
+      </div>
+    </div>
+    <!-- Floating particles overlay -->
+    <div class="hero-particles" id="heroParticles"></div>
+  </section>
+
+  <!-- ===== UNIVERSE SECTION ===== -->
+  <section id="universe" class="section universe-section">
+    <div class="section-container">
+      <div class="section-header" data-animate="fade-up">
+        <span class="section-tag">// THE UNIVERSE</span>
+        <h2 class="section-title">A World Beyond <br/><span class="text-gradient">Imagination</span></h2>
+        <p class="section-desc">
+          AETHERIA isn't just an anime platform — it's a living, breathing universe
+          rendered in real-time 3D. Every frame, every scene, every emotion
+          is crafted to transport you into worlds you never thought possible.
+        </p>
+      </div>
+
+      <div class="stats-grid" data-animate="fade-up">
+        <div class="stat-card">
+          <div class="stat-number" data-count="120">0</div>
+          <div class="stat-unit">K+</div>
+          <div class="stat-label">Active Viewers</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-count="850">0</div>
+          <div class="stat-unit"></div>
+          <div class="stat-label">Original Series</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-count="60">0</div>
+          <div class="stat-unit">FPS</div>
+          <div class="stat-label">Real-time Render</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-count="4">0</div>
+          <div class="stat-unit">K HDR</div>
+          <div class="stat-label">Visual Fidelity</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EXPERIENCE SECTION ===== -->
+  <section id="experience" class="section experience-section">
+    <div class="section-container">
+      <div class="section-header" data-animate="fade-up">
+        <span class="section-tag">// THE EXPERIENCE</span>
+        <h2 class="section-title">Engineered for <br/><span class="text-gradient">Obsession</span></h2>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Volumetric 3D Scenes</h3>
+          <p class="feature-desc">
+            Every environment is a fully navigable 3D space. Pan, zoom, and orbit
+            through scenes as if you're inside the anime itself.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 6v6l4 2"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Zero-Latency Streaming</h3>
+          <p class="feature-desc">
+            Powered by edge computing and adaptive bitrate technology.
+            Buffer-free, crystal-clear playback at up to 4K HDR.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">AI Character Bonding</h3>
+          <p class="feature-desc">
+            Form deep connections with AI-driven characters who remember you,
+            adapt to your preferences, and grow alongside your journey.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Story Branching Engine</h3>
+          <p class="feature-desc">
+            Your choices shape the narrative. Every decision creates a new timeline,
+            unlocking thousands of unique story outcomes.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+              <line x1="8" y1="21" x2="16" y2="21"/>
+              <line x1="12" y1="17" x2="12" y2="21"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Cross-Platform Sync</h3>
+          <p class="feature-desc">
+            Seamlessly switch between devices. Your progress, preferences,
+            and watchlist follow you everywhere — desktop, tablet, or mobile.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Spatial Audio</h3>
+          <p class="feature-desc">
+            Immersive 3D audio that adapts to camera position. Hear the wind,
+            feel the impact, and get lost in the soundscape of each world.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SHOWCASE SECTION ===== -->
+  <section id="showcase" class="section showcase-section">
+    <div class="section-container">
+      <div class="section-header" data-animate="fade-up">
+        <span class="section-tag">// SHOWCASE</span>
+        <h2 class="section-title">Featured <br/><span class="text-gradient">Originals</span></h2>
+        <p class="section-desc">
+          Hand-crafted stories from the world's most visionary anime creators.
+          Each title is a masterpiece of art, technology, and emotion.
+        </p>
+      </div>
+
+      <div class="showcase-grid">
+        <div class="showcase-card showcase-card-large" id="showcaseCard1">
+          <div class="showcase-card-bg" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+          <div class="showcase-card-content">
+            <span class="showcase-badge">NEW SEASON</span>
+            <h3 class="showcase-title">Echoes of Eternity</h3>
+            <p class="showcase-meta">Sci-Fi · Action · 24 Episodes</p>
+            <p class="showcase-excerpt">
+              In a world where time loops endlessly, one girl discovers the key
+              to breaking the cycle — but at a cost that could unravel reality itself.
+            </p>
+          </div>
+          <div class="showcase-overlay"></div>
+        </div>
+
+        <div class="showcase-card" id="showcaseCard2">
+          <div class="showcase-card-bg" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
+          <div class="showcase-card-content">
+            <span class="showcase-badge">TRENDING</span>
+            <h3 class="showcase-title">Sakura Protocol</h3>
+            <p class="showcase-meta">Cyberpunk · Romance · 12 Episodes</p>
+          </div>
+          <div class="showcase-overlay"></div>
+        </div>
+
+        <div class="showcase-card" id="showcaseCard3">
+          <div class="showcase-card-bg" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
+          <div class="showcase-card-content">
+            <span class="showcase-badge">EXCLUSIVE</span>
+            <h3 class="showcase-title">Void Walker</h3>
+            <p class="showcase-meta">Fantasy · Mystery · 18 Episodes</p>
+          </div>
+          <div class="showcase-overlay"></div>
+        </div>
+
+        <div class="showcase-card" id="showcaseCard4">
+          <div class="showcase-card-bg" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);"></div>
+          <div class="showcase-card-content">
+            <span class="showcase-badge">AWARD WINNING</span>
+            <h3 class="showcase-title">The Last Alchemist</h3>
+            <p class="showcase-meta">Steampunk · Drama · 26 Episodes</p>
+          </div>
+          <div class="showcase-overlay"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA / JOIN SECTION ===== -->
+  <section id="join" class="section join-section">
+    <div class="section-container">
+      <div class="join-content">
+        <span class="section-tag">// JOIN THE MOVEMENT</span>
+        <h2 class="join-title">
+          The Future of Anime <br/>
+          <span class="text-gradient">Starts Here.</span>
+        </h2>
+        <p class="join-desc">
+          Be among the first to experience AETHERIA. Early access members get
+          exclusive content, limited-edition collectibles, and a permanent
+          place in our universe.
+        </p>
+        <div class="join-form">
+          <div class="input-wrapper">
+            <input type="email" id="emailInput" placeholder="Enter your email" class="join-input" autocomplete="email" />
+            <button class="btn btn-primary btn-join" id="joinBtn">
+              <span>Get Early Access</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </button>
+          </div>
+          <p class="join-disclaimer">Free early access · No credit card required · Cancel anytime</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo-jp">アエ</span>
+        <span class="logo-en">AETHERIA</span>
+        <p class="footer-tagline">Anime Universe Reimagined</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <a href="#">Features</a>
+          <a href="#">Pricing</a>
+          <a href="#">Originals</a>
+          <a href="#">Roadmap</a>
+        </div>
+        <div class="footer-col">
+          <h4>Community</h4>
+          <a href="#">Discord</a>
+          <a href="#">Twitter</a>
+          <a href="#">Reddit</a>
+          <a href="#">Blog</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="#">About</a>
+          <a href="#">Careers</a>
+          <a href="#">Press</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 AETHERIA. All rights reserved.</p>
+        <p class="footer-craft">Crafted with obsession in Tokyo & San Francisco.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
